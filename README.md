@@ -1,175 +1,61 @@
-# NKLStream Android App
+# 🎬 NKLStream - Watch YouTube Together
 
-An Android application for NKLStreamYT - a synchronized watch party platform for watching YouTube videos together with friends in real-time.
+**Watch YouTube videos in perfect sync with your friends - anywhere, anytime.**
 
-**Web Version:** [NKLStreamYT](https://nklstreamyt.pages.dev)
-
----
-
-## 📱 About This App
-
-The NKLStream Android app brings the full watch party experience to your Android device. Join rooms, watch YouTube videos in perfect synchronization with friends, and enjoy peer-to-peer video/audio chat - all from your phone or tablet.
+[Web Version](https://nklstreamyt.pages.dev) | [GitHub](https://github.com/niteshkumar8848/NKLStreamYT)
 
 ---
 
-## ✨ Features
+## ✨ Why You'll Love It
 
-### Core Functionality
-- 🎬 **Synchronized Playback** - Watch YouTube videos in sync with all room participants
-- 🎙️ **Video/Audio Chat** - Peer-to-peer video calls with room members
-- 💬 **Real-time Messaging** - Chat with friends during the watch party
-- 🔐 **Room System** - Join rooms with secure 8-character codes
-
-### User Experience
-- 📱 **Mobile-Optimized** - Designed for Android phones and tablets
-- 🎨 **Material Design** - Clean, modern Android UI
-- ⚡ **Fast & Lightweight** - Only 1.5MB APK size
-
-### Security
-- 🛡️ **Secure Rooms** - 53.4 trillion possible room code combinations
-- ✅ **Input Validation** - Protected against malicious inputs
-- 🔒 **Encrypted Communication** - Secure WebRTC and Socket.IO connections
+- 🎬 **Watch Together** - YouTube videos synced perfectly with all room members
+- 🎙️ **Video & Voice Chat** - Peer-to-peer calls with friends while watching
+- 💬 **Live Chat** - Message in real-time during watch parties
+- 🔐 **Private Rooms** - Secure 8-character codes (53+ trillion combinations)
+- 📱 **Mobile-First** - Built for Android phones and tablets
+- ⚡ **Tiny App** - Only 1.5MB APK
 
 ---
 
-## 📦 Installation
+## 📦 Install in 30 Seconds
 
-### Prerequisites
-- Android device running Android 5.0 (Lollipop) or higher
-- Permission to install apps from "Unknown Sources" (if not from Play Store)
-
-### Installation Methods
-
-#### Method 1: Direct APK Installation
-1. Download the `app-release-signed.apk` file
-2. Open your file manager and navigate to the APK location
-3. Tap on the APK to install
-4. If prompted, allow "Install from unknown sources"
-5. Follow the on-screen installation instructions
-6. Once installed, tap "Open" to launch the app
-
-#### Method 2: ADB Installation (For Developers)
-```bash
-# Connect your Android device via USB
-adb install app-release-signed.apk
-```
-
-#### Method 3: Transfer & Install
-1. Transfer the APK to your Android device (via USB, Bluetooth, cloud storage, etc.)
-2. Open the file on your device
-3. Follow the installation prompts
+1. Download `app-release-signed.apk` from `v1.0/`
+2. Tap to install → Allow unknown sources if asked
+3. Open app → Enter your name → Done!
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Quick Start
 
-### First-Time Setup
-1. Launch the app
-2. Enter your display name (3-32 characters)
-3. Grant camera and microphone permissions when prompted
+**Create a Room:**
+1. Tap "Create Room" → Share the 8-char code with friends
+2. Paste a YouTube URL → Hit "Load Video"
+3. You're the host - control playback for everyone!
 
-### Creating a Room
-1. Tap "Create Room" on the main screen
-2. Share the 8-character room code with friends
-3. Paste a YouTube URL and tap "Load Video"
-4. Control playback for everyone in the room
-
-### Joining a Room
-1. Tap "Join Room" on the main screen
-2. Enter the 8-character room code shared by the host
-3. Wait for the host to load a video
-4. Enjoy synchronized viewing!
+**Join a Room:**
+1. Tap "Join Room" → Enter the code
+2. Wait for host to load a video
+3. Enjoy! 🎉
 
 ---
 
-## 🔧 Technical Details
+## 📋 Requirements
 
-| Specification | Details |
-|---------------|---------|
-| **Package Size** | ~1.5 MB |
-| **Min Android Version** | Android 5.0 (API 21) |
-| **Target Android Version** | Android 14 (API 34) |
-| **Architecture** | ARM, ARM64, x86 |
-
-### Permissions Required
-- `INTERNET` - For connecting to rooms and streaming
-- `CAMERA` - For video chat
-- `MICROPHONE` - For voice chat
-- `RECORD_AUDIO` - For audio chat (legacy)
+- Android 5.0+ (Lollipop or newer)
+- Camera & microphone permissions (for video chat)
+- Stable internet connection
 
 ---
 
-## 🔗 Related Projects
+## ⚠️ Note
 
-### Main Web Application
-- **Repository:** [NKLStreamYT](https://github.com/niteshkumar8848/NKLStreamYT)
-- **Live Demo:** [nklstreamyt.pages.dev](https://nklstreamyt.pages.dev)
-
-### Features (Web Version)
-The Android app connects to the same backend as the web version, providing:
-- Real-time synchronized YouTube playback
-- WebRTC peer-to-peer video/audio calls
-- Live chat messaging
-- Room management with host controls
+- YouTube videos only
+- Max 4 users per room (WebRTC limitation)
+- Works best with modern Android WebView
 
 ---
 
-## 🏗️ Architecture
+**Made with ❤️ by [Nitesh Kumar Lodh](https://github.com/niteshkumar8848)**
 
-```
-┌─────────────────────────────────────────────────────────┐
-│                    Android App                          │
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐     │
-│  │   UI Layer  │  │  WebSocket  │  │   WebRTC    │     │
-│  │  (Activities│  │  (Socket.IO)│  │   Client    │     │
-│  │   & Views)  │  │             │  │             │     │
-│  └─────────────┘  └──────┬──────┘  └──────┬──────┘     │
-│                          │                 │            │
-└──────────────────────────┼─────────────────┼────────────┘
-                           │                 │
-              ┌────────────┴──────┐  ┌──────┴───────┐
-              │  Backend Server   │  │  P2P Peers   │
-              │  (Socket.IO)      │  │  (WebRTC)    │
-              └───────────────────┘  └──────────────┘
-```
-
----
-
-## ⚠️ Known Limitations
-
-- **YouTube Only** - Works with YouTube video URLs
-- **Max 4 Users/Room** - Limited by WebRTC mesh topology
-- **Stable Internet Required** - Needs good connection for sync
-- **Modern WebView** - Requires updated Android System WebView
-
----
-
-## 📋 Version History
-
-| Version | Date | Changes |
-|---------|------|---------|
-| v1.0 | Feb 2026 | Initial release with core features |
-
----
-
-## 👨‍💻 About
-
-**Developer:** Nitesh Kumar Lodh  
-**Focus:** Real-time web applications, mobile development, WebRTC
-
-### Connect
-- 🔗 GitHub: [@niteshkumar8848](https://github.com/niteshkumar8848)
-- 🌐 Web App: [nklstreamyt.pages.dev](https://nklstreamyt.pages.dev)
-
----
-
-## 📜 License
-
-This project is open source. All rights reserved.
-
----
-
-<div align="center">
-  <strong>✨ Watch together, anywhere ✨</strong>
-</div>
+*Watch together, anywhere.*
 
